@@ -1,4 +1,3 @@
-# Frontend CI Workflow (.github/workflows/frontend-ci.yml)
 name: Frontend CI
 
 on:
@@ -36,10 +35,5 @@ jobs:
         working-directory: ./client
         run: npm run build
       
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: client-build
-          path: client/build/
-          retention-days: 5
-
+      - name: Build completed
+        run: echo "✓ Frontend build successful"
